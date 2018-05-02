@@ -45,7 +45,7 @@ export default class ServerlessGitVariables {
         value = await _exec('git describe')
         break
       case 'sha1':
-        value = await _exec('git rev-parse --short HEAD')
+        value = await _exec('git describe --always --dirty')
         break
       case 'branch':
         value = await _exec('git rev-parse --abbrev-ref HEAD')
